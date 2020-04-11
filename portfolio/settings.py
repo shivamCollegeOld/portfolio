@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'projects.apps.ProjectsConfig',
+    'jobs.apps.JobsConfig',
+    'blog.apps.BlogConfig',
+
 
 ]
 
@@ -75,10 +77,15 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+#these lines connect our website to the postgresql database "portfoliodb" that we have created
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'portfoliodb',
+        'USER': 'postgres',
+        'PASSWORD': 'Shivam@1101',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -121,4 +128,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+#this is the definition of the media folder. "os.path.join(BASE_DIR, 'media')" is the directory
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#this defines the web url at which the media will be accessed
+MEDIA_URL = '/media/'
