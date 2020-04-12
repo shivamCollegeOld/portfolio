@@ -7,3 +7,6 @@ class Job(models.Model):
     #we want a summary with our project "thumbnail"
     summary = models.CharField(max_length=200, default="Details")
     link = models.CharField(max_length=255, default="Details")
+
+    def __str__(self):
+        return self.summary
