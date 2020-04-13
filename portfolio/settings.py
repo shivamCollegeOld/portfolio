@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 #these lines connect our website to the postgresql database "portfoliodb" that we have created
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'portfoliodb_',
         'USER': 'postgres',
         'PASSWORD': 'Shivam@1101',
